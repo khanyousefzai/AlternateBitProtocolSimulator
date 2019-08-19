@@ -155,7 +155,7 @@ void output_file_evolution(char input_file[], char output_file[]) {
                     do {
                         val_pos = payload.find("{", arr[counter]); /**< Find the first "{" position starting from arr value position */
                         string value = payload.substr(val_pos + 1, payload.find("}", /**< Returns the substring between {} */ 
-                        								  arr[counter]) - val_pos - 1);	 /**< and stores it in string value*/	
+                        							  arr[counter]) - val_pos - 1);	 /**< and stores it in string value*/	
                         if (value == "") {	/**< If the previous line returns "" (meaning no message value), then the if condition*/
                             continue;		/**< becomes true and the "continue", statement executes, returning the code handle to while block.*/
                         }else{				/**< Otherwise code continues with the task of parsing.*/	
@@ -163,7 +163,7 @@ void output_file_evolution(char input_file[], char output_file[]) {
                             /** The following line returns the substring between "::" and ":". 
                              * It then stores it in string port*/
                             string port = payload.substr(scope_resl_op + 2,
-                            								   ((payload.find(":", scope_resl_op + 2) - scope_resl_op) - 2));
+                            							((payload.find(":", scope_resl_op + 2) - scope_resl_op) - 2));
                             /**The following line writes parsed strings to the output via o_d_stream object*/
                             o_d_stream << time << "," << value << "," << port << "," << component_check << endl;
                         }
