@@ -68,7 +68,7 @@ void output_file_evolution(char input_file[], char output_file[]) {
      * If the file doesn't exist then the stat function returns -1 in the if condition,
      * making the condition true. The nested if condition checks for EOENT(Non-extstent)
      * condition and upon having true state, prints the stated message. The conditional
-     * block, if it's true, then termintes the current funtion by executing return statement.
+     * block, if it's true, then terminates the current funtion by executing return statement.
      */
     struct stat statBuff; /**< To get file statistics */
     if (stat(input_file, &statBuff) < 0) {
