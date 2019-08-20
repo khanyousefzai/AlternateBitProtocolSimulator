@@ -158,7 +158,7 @@ void output_file_evolution(char input_file[], char output_file[]) {
                     }
                     /**
                      * The following line finds the position of model (payload.find("model")) in
-                     * the payload, and that position is added to (6) to include the length of model
+                     * the payload, and that position is added to (6) include the length of model
                      * and space. This becomes the parameter of (.substr()) which returns the substring
                      * starting from this parameter position till the end-of-line.
                      */
