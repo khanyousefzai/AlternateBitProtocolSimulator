@@ -44,7 +44,9 @@ using TIME = NDTime;
 /**Output file path of the receiver test*/
 char output_file[] = "./data/abp_output.txt";
 /**Output file path of the function output_file_evolution*/
-char mod_output_file[] = "./data/file_mod_output.csv";;
+char mod_output_file[] = "./data/file_mod_output.csv";
+/**Output file path of the function output_time_statistics*/
+char time_statistics_file[] = "./data/time_stats_output.csv";
 
 
 /**
@@ -320,6 +322,15 @@ int main(int argc, char ** argv){
      * @param[in]      output_file  The output file is modified to more readable format
      */
     output_file_evolution(output_file, mod_output_file);
+
+    /**
+     * @brief      Time delay statistics
+     * The function calculates the time delay statistics between the sender and receiver correspondence
+     *
+     * @param      mod_output_file   The input file is the ouput file of abp_mod_output function
+     * @param      time_statistics_file  The output file is file containing statistics of time delay
+     */
+    output_time_statistics(mod_output_file, time_statistics_file);
 
     return 0;
 }

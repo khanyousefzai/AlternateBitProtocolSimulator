@@ -31,6 +31,8 @@ using TIME = NDTime;
 char output_file[] = "test/data/subnet_test_output.txt";
 /**Output file path of the function output_file_evolution*/
 char mod_output_file[] = "test/data/subnet_mod_output.csv";
+/**Output file path of the function output_time_statistics*/
+char time_statistics_file[] = "./data/time_stats_output.csv";
 
 
 /***** SETING INPUT PORTS FOR COUPLEDs *****/
@@ -139,6 +141,15 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
      * @param[in]      output_file  The output file is modified to more readable format
      */
     output_file_evolution(output_file, mod_output_file);
+
+    /**
+     * @brief      Time delay statistics
+     * The function calculates the time delay statistics between the sender and receiver correspondence
+     *
+     * @param      mod_output_file   The input file is the ouput file of abp_mod_output function
+     * @param      time_statistics_file  The output file is file containing statistics of time delay
+     */
+    output_time_statistics(mod_output_file, time_statistics_file);
 
     return 0;
 }
