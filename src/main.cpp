@@ -44,7 +44,7 @@ using TIME = NDTime;
 /**Output file path of the receiver test*/
 char output_file[] = "./data/abp_output.txt";
 /**Output file path of the function output_file_evolution*/
-char mod_output_file[] = "./data/file_mod_output.csv";;
+char mod_output_file[] = "./data/file_mod_output.csv";
 
 
 /**
