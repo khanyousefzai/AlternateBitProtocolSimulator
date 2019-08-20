@@ -40,6 +40,9 @@ The behavior of receiver is to receive the data and send back an acknowledgement
 - alternatebitprot.pdf
 - Cadmium_Documentation_Ubuntu.pdf
 - Cadmium_Windows.pdf
+- doxygen_message_header.zip
+- doxygen_source_files.zip
+- doxygen_header_files.zip
 
 **include [This folder contains the header files and data structures used in the project]**
 1. data_structures [This folder has message.hpp file]
