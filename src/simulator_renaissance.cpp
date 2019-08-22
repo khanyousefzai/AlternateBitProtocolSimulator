@@ -64,14 +64,14 @@ void output_file_evolution(char input_file[], char output_file[]) {
      	counter = 0, val_pos = 0, scope_resl_op = 0;  /**<  Different variables initialized for later use */
 
     /**
-     * @brief      if block to check file existence
+     * @brief      If block to check file existence
      * If the file doesn't exist then the stat function returns -1 in the if condition,
      * making the condition true. The nested if condition checks for EOENT(Non-extstent)
      * condition and upon having true state, prints the stated message. The conditional
      * block, if it's true, then terminates the current funtion by executing return statement.
      */
-    struct stat statBuff; /**< To get file statistics */
-    if (stat(input_file, &statBuff) < 0) {
+    struct stat stat_buff; /**< To get file statistics */
+    if (stat(input_file, &stat_buff) < 0) {
         if (errno == ENOENT) {
         cout << input_file << " doesn't exist: " << -ENOENT << endl;
         }
@@ -211,7 +211,8 @@ vector<string> split(const string &s, char delim) {
     vector<string> result; /**< result of type vector string declared */
     stringstream ss(s);
     string item;
-
+    /**The following while block checks for the delim in the string ss,
+     * and after parsing saves it in the vector result.*/
     while (getline(ss, item, delim)) {
         result.push_back(item);
     }
@@ -341,7 +342,7 @@ void output_time_statistics(char input_file[], char output_file[]) {
                 }
                 /**
                  * If current time seconds is greater than max time seconds, then set the max time to current time seconds. Otherwise,
-                 *  if, current time seconds is less than min time seconds, the set the min time to current time seconds.
+                 *  if, current time seconds is less than min time seconds, then set the min time to current time seconds.
                  */
                 if (time_secs > max) {
                     max = time_secs;
