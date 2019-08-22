@@ -55,8 +55,8 @@ void output_file_evolution(char input_file[], char output_file[]) {
      * condition and upon having true state, prints the stated message. The conditional
      * block, if it's true, then termintes the current funtion by executing return statement.
      */
-    struct stat statBuff; /**< To get file statistics */
-    if (stat(input_file, &statBuff) < 0) {
+    struct stat stat_buff; /**< To get file statistics */
+    if (stat(input_file, &stat_buff) < 0) {
         if (errno == ENOENT) {
         cout << input_file << " doesn't exist: " << -ENOENT << endl;
         }
