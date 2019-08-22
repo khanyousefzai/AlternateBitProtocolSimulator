@@ -104,7 +104,17 @@ Please use these commands if you don't have git pre-installed in your system.
 ---
 #  Steps to Run the Simulator
 
-**1.  Run the unit tests**
+**1.  Initialize the git-submodules**
+In the main project directory. 
+    - Open the terminal. Press in your keyboard Ctrl+Alt+t
+    - In the terminal, enter:
+        ``` git submodule init```
+    - If you want to update, enter:
+        ``` git submodule init```
+
+
+
+**2.  Run the unit tests**
 The same steps should be followed for receiver and subnet tests as we are showing the steps for the sender. 
    - Open the terminal. Press in your keyboard Ctrl+Alt+t
    - To compile the test, type in the terminal:
@@ -115,7 +125,7 @@ The same steps should be followed for receiver and subnet tests as we are showin
     ```	./bin/SENDER_TEST ```
    - To check the output of the test,  open  "test/data/sender_test_output.txt"
 			
-**2.  - Run the simulator**
+**3.  - Run the simulator**
    - Open the terminal. Press in your keyboard Ctrl+Alt+t
    - To compile the project, type in the terminal:
 		```make clean_all; make all```
@@ -123,7 +133,8 @@ The same steps should be followed for receiver and subnet tests as we are showin
    ```./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE. ```
    For this test you need to type:
 		```./bin/ABP data/input_abp_1.txt```
-   - To check the output of the simulation, open  "abp_output.txt"
+   - To check the output of the simulation, open in data folder "abp_output.txt"
+   - To check more readable output of the simulation, open in data folder "file_mod_output.csv"
    - To execute the simulator with different inputs
 		- Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
 		- Run the simulator using the instructions in step 3
