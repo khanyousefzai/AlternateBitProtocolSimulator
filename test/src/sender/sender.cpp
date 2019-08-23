@@ -32,7 +32,7 @@ char output_file[] = "test/data/sender_test_output.txt";
 /**Output file path of the function output_file_evolution*/
 char mod_output_file[] = "test/data/sender_mod_output.csv";
 /**Output file path of the function output_time_statistics*/
-char time_statistics_file[] = "./data/time_stats_output.csv";
+char time_statistics_file[] = "./test/data/send_time_stats_output.csv";
 
 
 /***** SETING INPUT PORTS FOR COUPLEDs *****/

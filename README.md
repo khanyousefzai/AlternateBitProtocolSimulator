@@ -73,6 +73,7 @@ The behavior of receiver is to receive the data and send back an acknowledgement
 - sender_input_test_control_In.txt
 - sender_mod_output.csv
 - sender_test_output.txt
+- send_time_stats_output.csv
 - subnet_input_test.txt
 - subnet_mod_output.csv
 - subnet_test_output.txt
@@ -127,7 +128,6 @@ The same steps should be followed for receiver and subnet tests as we are showin
     ```	./bin/SENDER_TEST ```
    - To check the output of the test,  open  "test/data/sender_test_output.txt"
    - To check the more readable output of the simulation, open in test/data folder "file_mod_output.csv"
-   - To check the time statistics of the simulation, open in test/data folder "time_stats_output.csv"
 			
 **3.  - Run the simulator**
    - Open the terminal. Press in your keyboard Ctrl+Alt+t
