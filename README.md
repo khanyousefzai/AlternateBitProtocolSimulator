@@ -127,7 +127,7 @@ The same steps should be followed for receiver and subnet tests as we are showin
    - For this specific test you need to type:
     ```	./bin/SENDER_TEST ```
    - To check the output of the test,  open  "test/data/sender_test_output.txt"
-   - To check the more readable output of the simulation, open in test/data folder "file_mod_output.csv"
+   - To check the more readable output of the simulation, open in test/data folder "sender_mod_output.csv"
    - To check the time statistics of output of the test, open in test/data folder  "send_time_stats_output.csv"
    only for sender.
 			
