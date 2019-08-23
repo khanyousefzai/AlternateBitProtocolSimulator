@@ -14,10 +14,11 @@
 #include <cadmium/logger/common_loggers.hpp>
 
 
-#include "../../../lib/NDTime.hpp"
-#include "../../../lib/iestream.hpp"
+#include "../../../lib/DESTimes/include/NDTime.hpp"
+#include "../../../lib/vendor/iestream.hpp"
 
 #include "../../../include/data_structures/message.hpp"
+#include "../../../include/simulator_renaissance.hpp"
 
 #include "../../../include/receiver_cadmium.hpp"
 
@@ -25,6 +26,11 @@ using namespace std;
 
 using hclock=chrono::high_resolution_clock;
 using TIME = NDTime;
+
+/**Output file path of the receiver test*/
+char output_file[] = "test/data/receiver_test_output.txt";
+/**Output file path of the function output_file_evolution*/
+char mod_output_file[] = "test/data/receiver_mod_output.csv";
 
 
 /***** SETING INPUT PORTS FOR COUPLEDs *****/
@@ -50,7 +56,7 @@ int main(){
   auto start = hclock::now(); //to measure simulation execution time
 
 /*************** Loggers *******************/
-  static std::ofstream out_data("../test/data/receiver_test_output.txt");
+  static std::ofstream out_data(output_file);
     struct oss_sink_provider{
         static std::ostream& sink(){          
             return out_data;
@@ -76,7 +82,7 @@ using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
 /********************************************/
 /****** APPLICATION GENERATOR *******************/
 /********************************************/
-string input_data_control = "../test/data/receiver_input_test.txt";
+string input_data_control = "test/data/receiver_input_test.txt";
 const char * i_input_data_control = input_data_control.c_str();
 
 std::shared_ptr<cadmium::dynamic::modeling::model> generator = cadmium::dynamic::translate::make_dynamic_atomic_model<ApplicationGen, TIME, const char* >("generator" , std::move(i_input_data_control));
@@ -125,5 +131,14 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
     r.run_until(NDTime("04:00:00:000"));
     auto elapsed = std::chrono::duration_cast<std::chrono::duration<double, std::ratio<1>>>(hclock::now() - start).count();
     cout << "Simulation took:" << elapsed << "sec" << endl;
+
+    /**
+     * @brief          Function modifies the input file to more readable format 
+     *
+     * @param[in]      input_file   The input file is the ouput file of ABP or test sets
+     * @param[in]      output_file  The output file is modified to more readable format
+     */
+    output_file_evolution(output_file, mod_output_file);
+
     return 0;
 }

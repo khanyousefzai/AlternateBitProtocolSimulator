@@ -25,15 +25,15 @@ The behavior of receiver is to receive the data and send back an acknowledgement
 - main_sender.o
 - main_subnet.o
 - message.o
+- sim_ren.o
 
 **data  [Data files for testing and some simulator outputs]**
-- receiver_input_test.txt
-- receiver_test_output.txt
-- sender_input_test_ack_In.txt
-- sender_input_test_control_In.txt
-- sender_test_output.txt
-- subnet_input_test.txt
-- subnet_test_output.txt
+- abp_output.txt
+- abp_output_0.txt
+- abp_output_1.txt
+- file_mod_output.csv
+- input_abp_0.txt
+- input_abp_1.txt
 
 **doc [This folder contains documents related to ABP and Cadmium including installation guide in winddows and Linux]**
 - alternatebitprot.pdf
@@ -43,29 +43,36 @@ The behavior of receiver is to receive the data and send back an acknowledgement
 **include [This folder contains the header files and data structures used in the project]**
 1. data_structures [This folder has message.hpp file]
     - message.hpp
-- receiverCadmium.hpp
-- senderCadmium.hpp
-- subnetCadmium.hpp
+- receiver_cadmium.hpp
+- sender_cadmium.hpp
+- subnet_cadmium.hpp
+- simulator_renaissance.hpp
 
 **lib [This folder contains 3rd party header files needed in the project]**
 1. cadmium [This folder contains cadmium functionalities]
 2. DESTimes [This folder contains DESTimes functionalities]
--	iestream.hpp
--	NDTime.hpp
+3. Vendor [Other third-party resources]
+    -	iestream.hpp
+
 
 **src [This folder contains source code for the Alternate Bit Protocol simulator]**
 - main.cpp
 - message.cpp
+- simulator_renaissance.cpp
 
 **test [This folder the unit test for the different include files]**
 1. 	data  [Data files used by receiver, sender and subnet]
-    -  receiver_input_test.txt
-	- receiver_test_output.txt
-	- sender_input_test_ack_In.txt
-	- sender_input_test_control_In.txt
-	- sender_test_output.txt
-	- subnet_input_test.txt
-	-   subnet_test_output.txt
+- receiver_input_test.txt
+- receiver_mod_output.csv
+- receiver_test_output.txt
+- sender_input_test_ack_In.txt
+- sender_input_test_control_In.txt
+- sender_mod_output.csv
+- sender_test_output.txt
+- subnet_input_test.txt
+- subnet_mod_output.csv
+- subnet_test_output.txt
+
 2. 	src [Contains the source code]
 
 	  i. receiver [This folder contains the unit test of the receiver]
@@ -97,7 +104,17 @@ Please use these commands if you don't have git pre-installed in your system.
 ---
 #  Steps to Run the Simulator
 
-**1.  Run the unit tests**
+**1.  Initialize the git-submodules**
+In the main project directory. 
+   - Open the terminal. Press in your keyboard Ctrl+Alt+t
+   - In the terminal, enter:
+        ``` git submodule init```
+   - If you want to update, enter:
+        ``` git submodule init```
+
+
+
+**2.  Run the unit tests**
 The same steps should be followed for receiver and subnet tests as we are showing the steps for the sender. 
    - Open the terminal. Press in your keyboard Ctrl+Alt+t
    - To compile the test, type in the terminal:
@@ -106,17 +123,19 @@ The same steps should be followed for receiver and subnet tests as we are showin
     ``` ./NAME_OF_THE_COMPILED_FILE ```
    - For this specific test you need to type:
     ```	./bin/SENDER_TEST ```
-   - To check the output of the test,  open  "test/data/sender_test_output.txt"
+   - To check the output of the test,  open  ```test/data/sender_test_output.txt```
+   - To check the more readable output of the simulation, open in test/data folder ```sender_mod_output.csv```
 			
-**2.  - Run the simulator**
+**3.  - Run the simulator**
    - Open the terminal. Press in your keyboard Ctrl+Alt+t
    - To compile the project, type in the terminal:
 		```make clean_all; make all```
    - To run the simulation, type in the terminal
    ```./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE. ```
    For this test you need to type:
-		```./bin/ABP ../data/input_abp_1.txt```
-   - To check the output of the simulation, open  "abp_output.txt"
+		```./bin/ABP data/input_abp_1.txt```
+   - To check the output of the simulation, open in data folder "abp_output.txt"
+   - To check more readable output of the simulation, open in data folder "file_mod_output.csv"
    - To execute the simulator with different inputs
 		- Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
 		- Run the simulator using the instructions in step 3
