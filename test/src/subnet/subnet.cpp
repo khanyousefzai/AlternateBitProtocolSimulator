@@ -132,10 +132,8 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
     cout << "Simulation took:" << elapsed << "sec" << endl;
 
     /**
-     * @brief          Function modifies the input file to more readable format 
-     *
-     * @param[in]      input_file   The input file is the ouput file of ABP or test sets
-     * @param[in]      output_file  The output file is modified to more readable format
+     * This function which is taking string as input and giving output as strings.
+     * which is making the output in good format for human visualziation.
      */
     output_file_evolution(output_file, mod_output_file);
 

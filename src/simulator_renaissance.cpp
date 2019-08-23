@@ -50,10 +50,8 @@
 using namespace std;
 
 /**
- * @brief          Function modifies the input file to more readable format 
- *
- * @param[in]      input_file   The input file is the ouput file of ABP or test sets
- * @param[in]      output_file  The output file is modified to more readable format
+ * This function which is taking string as input and giving output as strings.
+ * which is making the output in good format for human visualziation.
  */
 void output_file_evolution(char input_file[], char output_file[]) {
 	/**
@@ -198,15 +196,9 @@ void output_file_evolution(char input_file[], char output_file[]) {
 }
 
 /**
- * @brief      String splitter
- * Function returns the  vector string after parsing the input string on the basis
- * of the given delimiter.
- *
- * @param[in]  s      String to be split
- * @param[in]  delim  The delimiter(eg. ",", ":") to be checked for
- *
- * @return     result String type vector
- */
+*The function which takes string for splitting and also checking specific delimters
+* and in output giving vecor of strings work as a string splitter.
+*/
 vector<string> split(const string &s, char delim) {
     vector<string> result; /**< result of type vector string declared */
     stringstream ss(s);
@@ -220,12 +212,9 @@ vector<string> split(const string &s, char delim) {
 }
 
 /**
- * @brief      Time delay statistics
- * The function calculates the time delay statistics between the sender and receiver correspondence
- *
- * @param      input_file   The input file is the ouput file of abp_mod_output function
- * @param      output_file  The output file is file containing statistics of time delay
- */
+* The function which is taking the input as string and output as string
+* which is behaving as function calculating time statistics
+*/
 void output_time_statistics(char input_file[], char output_file[]) {
 
     /** String variables to store the parsed sub-strings */
