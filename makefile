@@ -18,13 +18,13 @@ main: main.o message.o sim_ren.o
 sim_ren: sim_ren.o message.o 
 	$(CC) -g -o bin/RECEIVER_TEST build/sim_ren.o build/message.o 
 
-receiver: receiver.o message.o 
+receiver: receiver.o message.o sim_ren.o
 	$(CC) -g -o bin/RECEIVER_TEST build/receiver.o build/message.o build/sim_ren.o
 
-sender: sender.o message.o 
+sender: sender.o message.o sim_ren.o
 	$(CC) -g -o bin/SENDER_TEST build/sender.o build/message.o build/sim_ren.o
 
-subnet: subnet.o message.o 
+subnet: subnet.o message.o sim_ren.o
 	$(CC) -g -o bin/SUBNET_TEST build/subnet.o build/message.o build/sim_ren.o
 
 
