@@ -106,10 +106,10 @@ Please use these commands if you don't have git pre-installed in your system.
 
 **1.  Initialize the git-submodules**
 In the main project directory. 
-    - Open the terminal. Press in your keyboard Ctrl+Alt+t
-    - In the terminal, enter:
+   - Open the terminal. Press in your keyboard Ctrl+Alt+t
+   - In the terminal, enter:
         ``` git submodule init```
-    - If you want to update, enter:
+   - If you want to update, enter:
         ``` git submodule init```
 
 
