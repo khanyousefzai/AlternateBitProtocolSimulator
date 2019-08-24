@@ -123,7 +123,7 @@ In the main project directory.
    - In the terminal, enter:
         ``` git submodule init```
    - If you want to update, enter:
-        ``` git submodule init```
+        ``` git submodule update```
 
 **2.  Run the unit tests**
 The same steps should be followed for receiver and subnet tests as we are showing the steps for the sender. 
